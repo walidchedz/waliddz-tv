@@ -1,0 +1,134 @@
+/* الملف الأساسي للأنماط - يمكن تمديده */
+
+/* تصفية القنوات */
+.filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tag {
+    padding: 0.4rem 1rem;
+    background: var(--card);
+    border: 1px solid #30363d;
+    border-radius: 20px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.tag:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.tag.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* مشغل الفيديو المتقدم */
+.video-container {
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #000;
+    margin-bottom: 1rem;
+}
+
+#mainVideoPlayer {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-container:hover .video-overlay {
+    opacity: 1;
+}
+
+/* قائمة القنوات */
+.channels-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 1rem;
+    background: var(--card);
+    border-radius: 10px;
+}
+
+.channel-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.channel-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    background: rgba(33, 150, 243, 0.1);
+}
+
+.channel-item.active {
+    border-color: var(--primary);
+    background: rgba(33, 150, 243, 0.2);
+}
+
+.channel-logo-small {
+    width: 40px;
+    height: 40px;
+    background: var(--gradient);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* شريط التحميل */
+.loading-bar {
+    width: 100%;
+    height: 4px;
+    background: #30363d;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.loading-progress {
+    height: 100%;
+    background: var(--primary);
+    width: 0%;
+    animation: loading 2s infinite;
+}
+
+@keyframes loading {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+}
