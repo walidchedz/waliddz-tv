@@ -10,7 +10,8 @@ class YacineTVApp {
         };
         
         this.state = {
-            playlists: [],
+            playlists: [https://live-edge-eu-1.cdn.enetres.net/56495F77FD124FECA75590A906965F2C022/live-3000/index.m3u8
+],
             channels: [],
             currentChannel: null,
             favorites: new Set(),
